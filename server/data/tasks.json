@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "679bc2c7-c5b0-4847-b574-67ad8481f65f",
+    "title": "Test task",
+    "description": "",
+    "status": "Not Started",
+    "priority": "High",
+    "dueDate": null,
+    "tags": [
+      "demo"
+    ],
+    "createdAt": "2026-08-25T15:30:35.829Z",
+    "updatedAt": "2026-08-25T15:30:35.829Z"
+  }
+]
