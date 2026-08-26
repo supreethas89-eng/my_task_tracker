@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TagChip } from "./Badge";
-import { PRIORITIES, STATUSES } from "../lib/constants";
+import { PRIORITIES, PRIORITY_STYLES, STATUSES } from "../lib/constants";
 
 function fmtDate(d) {
   if (!d) return "";
@@ -74,7 +74,9 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate }) {
                 <select
                   value={task.priority}
                   onChange={(e) => onUpdate(task.id, { priority: e.target.value })}
-                  className="cursor-pointer border-none bg-transparent text-xs outline-none"
+                  className={`cursor-pointer rounded-full border-none px-2 py-0.5 text-xs font-medium outline-none ${
+                    PRIORITY_STYLES[task.priority] || PRIORITY_STYLES.Medium
+                  }`}
                 >
                   {PRIORITIES.map((p) => (
                     <option key={p} value={p}>

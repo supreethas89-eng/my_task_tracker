@@ -14,6 +14,17 @@ export function useTasks() {
   const [tagFilter, setTagFilter] = useState([]);
   const [sortBy, setSortBy] = useState("createdAt");
   const [sortDir, setSortDir] = useState("desc");
+  const [gitPending, setGitPending] = useState(false);
+  const [gitCommitting, setGitCommitting] = useState(false);
+
+  const refreshGitStatus = useCallback(async () => {
+    try {
+      const { pending } = await api.gitStatus();
+      setGitPending(pending);
+    } catch {
+      // ignore - git status is best-effort
+    }
+  }, []);
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -30,13 +41,15 @@ export function useTasks() {
 
   useEffect(() => {
     refresh();
-  }, [refresh]);
+    refreshGitStatus();
+  }, [refresh, refreshGitStatus]);
 
   const createTask = useCallback(async (task) => {
     const created = await api.create(task);
     setTasks((prev) => [...prev, created]);
+    refreshGitStatus();
     return created;
-  }, []);
+  }, [refreshGitStatus]);
 
   const updateTask = useCallback(async (id, patch) => {
     const prevTasks = tasks;
@@ -44,25 +57,38 @@ export function useTasks() {
     try {
       const updated = await api.update(id, patch);
       setTasks((prev) => prev.map((t) => (t.id === id ? updated : t)));
+      refreshGitStatus();
       return updated;
     } catch (e) {
       setTasks(prevTasks);
       throw e;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tasks]);
+  }, [tasks, refreshGitStatus]);
 
   const deleteTask = useCallback(async (id) => {
     const prevTasks = tasks;
     setTasks((prev) => prev.filter((t) => t.id !== id));
     try {
       await api.remove(id);
+      refreshGitStatus();
     } catch (e) {
       setTasks(prevTasks);
       throw e;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tasks]);
+  }, [tasks, refreshGitStatus]);
+
+  const commitToGit = useCallback(async (message) => {
+    setGitCommitting(true);
+    try {
+      const { committed } = await api.gitCommit(message);
+      setGitPending(false);
+      return committed;
+    } finally {
+      setGitCommitting(false);
+    }
+  }, []);
 
   const allTags = useMemo(() => {
     const set = new Set();
@@ -130,5 +156,8 @@ export function useTasks() {
     setSortBy,
     sortDir,
     setSortDir,
+    gitPending,
+    gitCommitting,
+    commitToGit,
   };
 }

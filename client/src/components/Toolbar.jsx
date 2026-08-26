@@ -54,6 +54,9 @@ export function Toolbar({
   darkMode,
   setDarkMode,
   searchInputRef,
+  gitPending,
+  gitCommitting,
+  onCommit,
 }) {
   return (
     <div className="flex flex-col gap-3 border-b border-neutral-200 px-6 py-4 dark:border-neutral-800">
@@ -75,6 +78,17 @@ export function Toolbar({
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            onClick={onCommit}
+            disabled={!gitPending || gitCommitting}
+            title={gitPending ? "Commit pending task changes to git" : "No pending changes to commit"}
+            className="relative rounded-md border border-neutral-200 px-2.5 py-1.5 text-sm font-medium text-neutral-600 hover:bg-neutral-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+          >
+            {gitCommitting ? "Committing..." : "Update Git"}
+            {gitPending && !gitCommitting && (
+              <span className="absolute -right-1 -top-1 h-2 w-2 rounded-full bg-orange-500" />
+            )}
+          </button>
           <button
             onClick={() => setDarkMode(!darkMode)}
             title="Toggle dark mode"

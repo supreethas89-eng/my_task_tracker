@@ -1,4 +1,4 @@
-const BASE = "/api";
+const BASE = import.meta.env.VITE_API_BASE || "/api";
 
 async function request(path, options) {
   const res = await fetch(`${BASE}${path}`, {
@@ -18,4 +18,7 @@ export const api = {
   create: (task) => request("/tasks", { method: "POST", body: JSON.stringify(task) }),
   update: (id, patch) => request(`/tasks/${id}`, { method: "PUT", body: JSON.stringify(patch) }),
   remove: (id) => request(`/tasks/${id}`, { method: "DELETE" }),
+  gitStatus: () => request("/git/status"),
+  gitCommit: (message) =>
+    request("/git/commit", { method: "POST", body: JSON.stringify({ message }) }),
 };

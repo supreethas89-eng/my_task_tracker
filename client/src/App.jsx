@@ -26,6 +26,9 @@ export default function App() {
     setSortBy,
     sortDir,
     setSortDir,
+    gitPending,
+    gitCommitting,
+    commitToGit,
   } = useTasks();
 
   const [view, setView] = useState("table");
@@ -83,6 +86,17 @@ export default function App() {
     setModalOpen(false);
   };
 
+  const [gitError, setGitError] = useState(null);
+
+  const handleCommit = async () => {
+    setGitError(null);
+    try {
+      await commitToGit("Update tasks");
+    } catch (e) {
+      setGitError(e.message);
+    }
+  };
+
   return (
     <div className="mx-auto flex min-h-screen max-w-6xl flex-col">
       <header className="px-6 pt-8">
@@ -112,12 +126,20 @@ export default function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         searchInputRef={searchInputRef}
+        gitPending={gitPending}
+        gitCommitting={gitCommitting}
+        onCommit={handleCommit}
       />
 
       <main className="flex-1">
         {error && (
           <p className="mx-6 mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-600 dark:bg-red-950 dark:text-red-300">
             {error}
+          </p>
+        )}
+        {gitError && (
+          <p className="mx-6 mt-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-600 dark:bg-red-950 dark:text-red-300">
+            Git commit failed: {gitError}
           </p>
         )}
 

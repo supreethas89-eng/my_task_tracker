@@ -1,0 +1,14 @@
+name = "task-tracker-api"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+GITHUB_OWNER = "supreethas89-eng"
+GITHUB_REPO = "my_task_tracker"
+GITHUB_BRANCH = "main"
+GITHUB_FILE_PATH = "server/data/tasks.json"
+ALLOWED_ORIGIN = "https://my-task-tracker-30g.pages.dev"
+
+[[kv_namespaces]]
+binding = "TASKS_KV"
+id = "539c667d9dbe4148a82980c8a276f75c"

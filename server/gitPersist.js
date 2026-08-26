@@ -15,14 +15,23 @@ export function commitTasksFile(message) {
   queue = queue
     .then(async () => {
       const isRepo = await git.checkIsRepo();
-      if (!isRepo) return;
+      if (!isRepo) return false;
       await git.add(TASKS_FILE_REL);
       const status = await git.status();
-      if (status.staged.length === 0) return;
+      if (status.staged.length === 0) return false;
       await git.commit(message);
+      return true;
     })
     .catch((err) => {
       console.error("[git] commit failed:", err.message);
+      throw err;
     });
   return queue;
+}
+
+export async function hasPendingChanges() {
+  const isRepo = await git.checkIsRepo();
+  if (!isRepo) return false;
+  const status = await git.status();
+  return status.files.some((f) => f.path === TASKS_FILE_REL);
 }
