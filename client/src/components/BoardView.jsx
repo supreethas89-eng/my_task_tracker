@@ -15,7 +15,7 @@ function fmtDate(d) {
   return new Date(d).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
-function TaskCard({ task, onOpen }) {
+function TaskCard({ task, onOpen, onDelete }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: task.id,
   });
@@ -33,12 +33,28 @@ function TaskCard({ task, onOpen }) {
       {...listeners}
       {...attributes}
       onClick={() => onOpen(task)}
-      className={`cursor-pointer rounded-lg border border-neutral-200 bg-white p-3 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 ${
+      className={`group relative cursor-pointer rounded-lg border border-neutral-200 bg-white p-3 shadow-sm transition hover:shadow-md dark:border-neutral-800 dark:bg-neutral-900 ${
         isDragging ? "opacity-50" : ""
       }`}
     >
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete(task.id);
+        }}
+        title="Delete task"
+        className="invisible absolute right-1.5 top-1.5 rounded p-1 text-neutral-400 hover:bg-red-50 hover:text-red-600 group-hover:visible dark:hover:bg-red-950 dark:hover:text-red-400"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-3.5 w-3.5">
+          <path
+            fillRule="evenodd"
+            d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
       <p
-        className={`text-sm font-medium text-neutral-800 dark:text-neutral-100 ${
+        className={`pr-4 text-sm font-medium text-neutral-800 dark:text-neutral-100 ${
           task.status === "Done" ? "text-neutral-400 line-through dark:text-neutral-500" : ""
         }`}
       >
@@ -61,7 +77,7 @@ function TaskCard({ task, onOpen }) {
   );
 }
 
-function Column({ status, tasks, onOpen, onQuickAdd }) {
+function Column({ status, tasks, onOpen, onQuickAdd, onDelete }) {
   const { setNodeRef, isOver } = useDroppable({ id: status });
   const [quickTitle, setQuickTitle] = useState("");
   const style = STATUS_STYLES[status];
@@ -89,7 +105,7 @@ function Column({ status, tasks, onOpen, onQuickAdd }) {
 
       <div className="flex flex-col gap-2 rounded-lg bg-neutral-100/50 p-2 dark:bg-neutral-900/40 min-h-[80px]">
         {tasks.map((task) => (
-          <TaskCard key={task.id} task={task} onOpen={onOpen} />
+          <TaskCard key={task.id} task={task} onOpen={onOpen} onDelete={onDelete} />
         ))}
         <input
           value={quickTitle}
@@ -103,7 +119,7 @@ function Column({ status, tasks, onOpen, onQuickAdd }) {
   );
 }
 
-export function BoardView({ tasks, onOpen, onUpdate, onCreate }) {
+export function BoardView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
   const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 5 } }));
 
   const handleDragEnd = (event) => {
@@ -127,6 +143,7 @@ export function BoardView({ tasks, onOpen, onUpdate, onCreate }) {
             tasks={tasks.filter((t) => t.status === status)}
             onOpen={onOpen}
             onQuickAdd={handleQuickAdd}
+            onDelete={onDelete}
           />
         ))}
       </div>

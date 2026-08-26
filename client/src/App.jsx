@@ -146,9 +146,21 @@ export default function App() {
         {loading ? (
           <p className="px-6 py-8 text-sm text-neutral-400">Loading tasks...</p>
         ) : view === "table" ? (
-          <TableView tasks={filteredTasks} onOpen={openTask} onUpdate={updateTask} onCreate={createTask} />
+          <TableView
+            tasks={filteredTasks}
+            onOpen={openTask}
+            onUpdate={updateTask}
+            onCreate={createTask}
+            onDelete={deleteTask}
+          />
         ) : (
-          <BoardView tasks={filteredTasks} onOpen={openTask} onUpdate={updateTask} onCreate={createTask} />
+          <BoardView
+            tasks={filteredTasks}
+            onOpen={openTask}
+            onUpdate={updateTask}
+            onCreate={createTask}
+            onDelete={deleteTask}
+          />
         )}
       </main>
 
