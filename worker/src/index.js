@@ -123,6 +123,7 @@ export default {
           priority: body.priority || "Medium",
           dueDate: body.dueDate || null,
           tags: body.tags || [],
+          moreDetails: body.moreDetails || "",
           createdAt: now,
           updatedAt: now,
         };

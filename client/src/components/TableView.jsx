@@ -32,6 +32,7 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
             <th className="py-2 pr-4 font-medium">Priority</th>
             <th className="py-2 pr-4 font-medium">Due date</th>
             <th className="py-2 pr-4 font-medium">Tags</th>
+            <th className="py-2 pr-4 font-medium">More details</th>
             <th className="w-8 py-2"></th>
           </tr>
         </thead>
@@ -96,6 +97,13 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
                   ))}
                 </div>
               </td>
+              <td
+                className="max-w-[220px] cursor-pointer truncate py-2 pr-4 text-neutral-500 dark:text-neutral-400"
+                onClick={() => onOpen(task)}
+                title={task.moreDetails || ""}
+              >
+                {task.moreDetails || <span className="text-neutral-300 dark:text-neutral-600">—</span>}
+              </td>
               <td className="py-2 pr-2 text-right">
                 <button
                   onClick={(e) => {
@@ -119,7 +127,7 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
 
           <tr>
             <td className="py-2 pr-2 text-neutral-300">+</td>
-            <td colSpan={6} className="py-2">
+            <td colSpan={7} className="py-2">
               <input
                 value={quickTitle}
                 onChange={(e) => setQuickTitle(e.target.value)}

@@ -50,6 +50,7 @@ app.post("/tasks", async (req, res) => {
     priority: req.body.priority || "Medium",
     dueDate: req.body.dueDate || null,
     tags: req.body.tags || [],
+    moreDetails: req.body.moreDetails || "",
     createdAt: now,
     updatedAt: now,
   };

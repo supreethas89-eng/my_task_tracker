@@ -8,6 +8,7 @@ const emptyDraft = {
   priority: "Medium",
   dueDate: "",
   tags: "",
+  moreDetails: "",
 };
 
 export function TaskModal({ task, onClose, onSave, onDelete }) {
@@ -22,6 +23,7 @@ export function TaskModal({ task, onClose, onSave, onDelete }) {
         priority: task.priority || "Medium",
         dueDate: task.dueDate ? task.dueDate.slice(0, 10) : "",
         tags: (task.tags || []).join(", "),
+        moreDetails: task.moreDetails || "",
       });
     } else {
       setDraft(emptyDraft);
@@ -50,6 +52,7 @@ export function TaskModal({ task, onClose, onSave, onDelete }) {
         .split(",")
         .map((t) => t.trim())
         .filter(Boolean),
+      moreDetails: draft.moreDetails,
     });
   };
 
@@ -125,6 +128,17 @@ export function TaskModal({ task, onClose, onSave, onDelete }) {
             />
           </label>
         </div>
+
+        <label className="mt-4 flex flex-col gap-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+          More details
+          <textarea
+            value={draft.moreDetails}
+            onChange={set("moreDetails")}
+            placeholder="Any additional notes, links, or context..."
+            rows={3}
+            className="w-full resize-none rounded-md border border-neutral-200 bg-white px-2 py-1.5 text-sm text-neutral-800 outline-none dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+          />
+        </label>
 
         <div className="mt-6 flex items-center justify-between">
           {task ? (
