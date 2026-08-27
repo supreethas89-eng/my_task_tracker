@@ -99,12 +99,14 @@
     "id": "fd13d043-6aef-41cf-8598-5b7e4430ea45",
     "title": "Hello Supreeth~ AU PROD issue there’s no lov of kyc reference… Could you come up to the 8th floor and help us?",
     "description": "",
-    "status": "Not Started",
-    "priority": "Medium",
+    "status": "In Progress",
+    "priority": "Low",
     "dueDate": null,
-    "tags": [],
-    "moreDetails": "",
+    "tags": [
+      "Bank EHD"
+    ],
+    "moreDetails": "Bank deployed EHD changes but lov not working to verify sources deployed.",
     "createdAt": "2026-08-27T07:03:32.021Z",
-    "updatedAt": "2026-08-27T07:03:32.021Z"
+    "updatedAt": "2026-08-27T07:40:36.825Z"
   }
 ]
