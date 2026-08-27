@@ -3,14 +3,14 @@
     "id": "e2ef30c9-77d4-4a16-a51d-ed9fdf5c41ca",
     "title": "ELCM Customization tracking -VIC",
     "description": "",
-    "status": "In Progress",
+    "status": "Not Started",
     "priority": "Medium",
     "dueDate": "2026-08-31",
     "tags": [
       "new customization"
     ],
     "createdAt": "2026-08-26T12:29:18.487Z",
-    "updatedAt": "2026-08-26T12:33:06.661Z"
+    "updatedAt": "2026-08-27T03:33:16.789Z"
   },
   {
     "id": "eb0fb9e8-ea05-4dd0-bbbb-183727b217a7",
@@ -64,5 +64,19 @@
     "moreDetails": "",
     "createdAt": "2026-08-26T12:44:35.863Z",
     "updatedAt": "2026-08-26T12:45:03.310Z"
+  },
+  {
+    "id": "df2bd9cf-92f5-4ac8-8d76-f9d13f3af167",
+    "title": "Code changes for Duplicate LIQD FT V11.4-Kevin",
+    "description": "",
+    "status": "Not Started",
+    "priority": "High",
+    "dueDate": "2026-08-27",
+    "tags": [
+      "MOS fix"
+    ],
+    "moreDetails": "",
+    "createdAt": "2026-08-27T03:33:41.687Z",
+    "updatedAt": "2026-08-27T03:34:02.948Z"
   }
 ]
