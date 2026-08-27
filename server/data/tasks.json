@@ -63,9 +63,9 @@
     "tags": [
       "New customization"
     ],
-    "moreDetails": "",
+    "moreDetails": "Ma Bo , mentioned it's like rate fixing concept, with rate fixing days, system can pick rate from no of days prior to current day. ELCM revaluation already have similar parameter for fx rate pickup",
     "createdAt": "2026-08-26T12:44:35.863Z",
-    "updatedAt": "2026-08-26T12:45:03.310Z"
+    "updatedAt": "2026-08-27T08:57:36.719Z"
   },
   {
     "id": "df2bd9cf-92f5-4ac8-8d76-f9d13f3af167",
@@ -108,5 +108,17 @@
     "moreDetails": "Bank deployed EHD changes but lov not working to verify sources deployed.",
     "createdAt": "2026-08-27T07:03:32.021Z",
     "updatedAt": "2026-08-27T07:41:45.290Z"
+  },
+  {
+    "id": "4b6e0d4c-7d05-46c5-8f70-a2016943a9cb",
+    "title": "SI Module Product Insert scripts from DEV",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-08-27T08:58:10.963Z",
+    "updatedAt": "2026-08-27T08:58:53.608Z"
   }
 ]
