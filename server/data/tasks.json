@@ -85,15 +85,15 @@
     "id": "67c2623c-b8e1-4745-a3b3-1b98e40932bd",
     "title": "Take Gold Data Dump of AU and JP and Copy to Cloud",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Low",
     "dueDate": "2026-09-03",
     "tags": [
       "Internal"
     ],
-    "moreDetails": "AU started , JP Yet to start",
+    "moreDetails": "completed the export and copied to Shared folder.",
     "createdAt": "2026-08-27T04:51:45.899Z",
-    "updatedAt": "2026-08-27T04:52:12.308Z"
+    "updatedAt": "2026-08-28T07:11:35.655Z"
   },
   {
     "id": "fd13d043-6aef-41cf-8598-5b7e4430ea45",
