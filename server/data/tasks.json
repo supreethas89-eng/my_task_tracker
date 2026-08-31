@@ -148,5 +148,19 @@
     "moreDetails": "shared the solution approach to Bank to do code changes using FIFO . bank to confirm to release MOS fix",
     "createdAt": "2026-08-31T03:23:28.044Z",
     "updatedAt": "2026-08-31T03:25:00.666Z"
+  },
+  {
+    "id": "b83c4a34-999f-4d6c-b012-2eabda66d684",
+    "title": "FCUBS 11.4 - Database Patch P20675347 Testing",
+    "description": "",
+    "status": "In Progress",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [
+      "Patch testing"
+    ],
+    "moreDetails": "Support team has asked to apply JDBC patch 26942313 and retest the case ",
+    "createdAt": "2026-08-31T09:19:16.713Z",
+    "updatedAt": "2026-08-31T09:20:04.852Z"
   }
 ]
