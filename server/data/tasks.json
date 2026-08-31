@@ -162,5 +162,19 @@
     "moreDetails": "Support team has asked to apply JDBC patch 26942313 and retest the case ",
     "createdAt": "2026-08-31T09:19:16.713Z",
     "updatedAt": "2026-08-31T09:20:04.852Z"
+  },
+  {
+    "id": "97f8d807-d6ed-4782-b5a5-88b44e416f17",
+    "title": "Keyperson -KYC ID Length Issue",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [
+      "New customization"
+    ],
+    "moreDetails": "",
+    "createdAt": "2026-08-31T11:23:31.462Z",
+    "updatedAt": "2026-08-31T11:23:56.427Z"
   }
 ]
