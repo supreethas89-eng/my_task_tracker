@@ -31,15 +31,15 @@
     "id": "e3da2a98-6c22-4f8b-96dd-2c19e666252e",
     "title": "Code changes for Option 3 customization",
     "description": "",
-    "status": "Not Started",
+    "status": "In Progress",
     "priority": "High",
     "dueDate": "2026-09-01",
     "tags": [
       "Enhancement"
     ],
-    "moreDetails": "",
+    "moreDetails": "Bank added new requirement for effort analysis",
     "createdAt": "2026-08-26T12:34:28.997Z",
-    "updatedAt": "2026-08-26T12:35:54.177Z"
+    "updatedAt": "2026-08-31T03:55:36.478Z"
   },
   {
     "id": "cbe41541-38cc-46f4-85a5-f6b0ddb7a05f",
