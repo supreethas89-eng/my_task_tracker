@@ -134,5 +134,19 @@
     "moreDetails": "sent further queries to Kevin to confirm and asking if they take this as EHD.",
     "createdAt": "2026-08-27T09:17:32.895Z",
     "updatedAt": "2026-08-28T09:33:50.872Z"
+  },
+  {
+    "id": "57bda55f-6d43-4f8a-8a0a-1c919c7354ed",
+    "title": "Two CITAD Transactions Missing in VN Production--Jerry",
+    "description": "",
+    "status": "In Progress",
+    "priority": "Medium",
+    "dueDate": "2026-09-04",
+    "tags": [
+      "MOS fix"
+    ],
+    "moreDetails": "shared the solution approach to Bank to do code changes using FIFO . bank to confirm to release MOS fix",
+    "createdAt": "2026-08-31T03:23:28.044Z",
+    "updatedAt": "2026-08-31T03:25:00.666Z"
   }
 ]
