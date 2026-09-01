@@ -167,26 +167,38 @@
     "id": "97f8d807-d6ed-4782-b5a5-88b44e416f17",
     "title": "Keyperson -KYC ID Length Issue",
     "description": "",
-    "status": "Not Started",
+    "status": "In Progress",
     "priority": "Medium",
     "dueDate": null,
     "tags": [
       "New customization"
     ],
-    "moreDetails": "",
+    "moreDetails": "replied Bank with details asking for expected new column size .\n\ndetail_key size is 500 char in sttb_field_log",
     "createdAt": "2026-08-31T11:23:31.462Z",
-    "updatedAt": "2026-08-31T11:23:56.427Z"
+    "updatedAt": "2026-09-01T03:20:52.393Z"
   },
   {
     "id": "2559a47f-c7fa-4da7-bad5-67e17647bf48",
     "title": "Amortized fee details in obcl",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-08-31T11:27:39.860Z",
-    "updatedAt": "2026-08-31T11:27:39.860Z"
+    "updatedAt": "2026-09-01T02:43:23.207Z"
+  },
+  {
+    "id": "1b8bb6e6-ce2b-43ce-b573-4a19972ee4ac",
+    "title": "FCUBS Support for RHEL 9",
+    "description": "",
+    "status": "In Progress",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "peri is replying it .",
+    "createdAt": "2026-09-01T03:05:48.042Z",
+    "updatedAt": "2026-09-01T03:21:15.445Z"
   }
 ]
