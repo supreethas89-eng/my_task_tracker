@@ -45,13 +45,13 @@
     "id": "cbe41541-38cc-46f4-85a5-f6b0ddb7a05f",
     "title": "FS field Mapping for MMAS --BASAV",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "High",
     "dueDate": "2026-08-27",
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-08-26T12:36:51.871Z",
-    "updatedAt": "2026-08-26T12:37:09.630Z"
+    "updatedAt": "2026-09-01T03:25:31.934Z"
   },
   {
     "id": "8de87797-5687-4593-aecb-122818778e15",
@@ -140,14 +140,14 @@
     "title": "Two CITAD Transactions Missing in VN Production--Jerry",
     "description": "",
     "status": "In Progress",
-    "priority": "Medium",
+    "priority": "High",
     "dueDate": "2026-09-04",
     "tags": [
       "MOS fix"
     ],
-    "moreDetails": "shared the solution approach to Bank to do code changes using FIFO . bank to confirm to release MOS fix",
+    "moreDetails": "Bank confirmed apporach , to start the development\n--shared the solution approach to Bank to do code changes using FIFO . bank to confirm to release MOS fix",
     "createdAt": "2026-08-31T03:23:28.044Z",
-    "updatedAt": "2026-08-31T03:25:00.666Z"
+    "updatedAt": "2026-09-01T03:25:49.459Z"
   },
   {
     "id": "b83c4a34-999f-4d6c-b012-2eabda66d684",
