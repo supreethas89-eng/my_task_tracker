@@ -176,5 +176,17 @@
     "moreDetails": "",
     "createdAt": "2026-08-31T11:23:31.462Z",
     "updatedAt": "2026-08-31T11:23:56.427Z"
+  },
+  {
+    "id": "2559a47f-c7fa-4da7-bad5-67e17647bf48",
+    "title": "Amortized fee details in obcl",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-08-31T11:27:39.860Z",
+    "updatedAt": "2026-08-31T11:27:39.860Z"
   }
 ]
