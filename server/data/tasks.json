@@ -3,14 +3,14 @@
     "id": "e2ef30c9-77d4-4a16-a51d-ed9fdf5c41ca",
     "title": "ELCM Customization tracking -VIC",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Low",
     "dueDate": "2026-08-31",
     "tags": [
       "new customization"
     ],
     "createdAt": "2026-08-26T12:29:18.487Z",
-    "updatedAt": "2026-08-28T09:35:37.861Z",
+    "updatedAt": "2026-09-01T10:04:43.398Z",
     "moreDetails": "Mani is doing analysis"
   },
   {
@@ -193,13 +193,13 @@
     "id": "1b8bb6e6-ce2b-43ce-b573-4a19972ee4ac",
     "title": "FCUBS Support for RHEL 9",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "peri is replying it .",
     "createdAt": "2026-09-01T03:05:48.042Z",
-    "updatedAt": "2026-09-01T03:21:15.445Z"
+    "updatedAt": "2026-09-01T10:04:40.910Z"
   },
   {
     "id": "235a5dc5-6cea-49b1-a15b-0d9932c4f1bd",
