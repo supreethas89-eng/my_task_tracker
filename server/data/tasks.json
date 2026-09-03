@@ -167,15 +167,15 @@
     "id": "97f8d807-d6ed-4782-b5a5-88b44e416f17",
     "title": "Keyperson -KYC ID Length Issue",
     "description": "",
-    "status": "In Progress",
-    "priority": "Medium",
+    "status": "Done",
+    "priority": "Low",
     "dueDate": null,
     "tags": [
       "New customization"
     ],
-    "moreDetails": "replied Bank with details asking for expected new column size .\n\ndetail_key size is 500 char in sttb_field_log",
+    "moreDetails": "asked bank to track as part of redmine for STDKYCMN customization\n--replied Bank with details asking for expected new column size .\n\n--detail_key size is 500 char in sttb_field_log",
     "createdAt": "2026-08-31T11:23:31.462Z",
-    "updatedAt": "2026-09-01T03:20:52.393Z"
+    "updatedAt": "2026-09-03T02:35:46.443Z"
   },
   {
     "id": "2559a47f-c7fa-4da7-bad5-67e17647bf48",
