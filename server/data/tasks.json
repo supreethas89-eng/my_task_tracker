@@ -71,15 +71,15 @@
     "id": "df2bd9cf-92f5-4ac8-8d76-f9d13f3af167",
     "title": "Code changes for Duplicate LIQD FT V11.4-Kevin",
     "description": "",
-    "status": "In Progress",
-    "priority": "Urgent",
+    "status": "Done",
+    "priority": "Low",
     "dueDate": "2026-09-04",
     "tags": [
       "MOS fix"
     ],
-    "moreDetails": "bank rasied mos : 4-0003676148\n\n--asked Bank to raise MOS , done code changes to HKSIT \"D:\\Oracle_Workspace\\Supreeth\\fcubs11.4\\fixes\\FT_Duplicate_Liquidate\\fix\"",
+    "moreDetails": "released the fix in MOS\n--bank rasied mos : 4-0003676148\n\n--asked Bank to raise MOS , done code changes to HKSIT \"D:\\Oracle_Workspace\\Supreeth\\fcubs11.4\\fixes\\FT_Duplicate_Liquidate\\fix\"",
     "createdAt": "2026-08-27T03:33:41.687Z",
-    "updatedAt": "2026-09-03T02:30:03.343Z"
+    "updatedAt": "2026-09-04T07:58:07.559Z"
   },
   {
     "id": "67c2623c-b8e1-4745-a3b3-1b98e40932bd",
