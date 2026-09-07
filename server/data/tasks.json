@@ -236,5 +236,19 @@
     "moreDetails": "",
     "createdAt": "2026-09-02T02:41:40.694Z",
     "updatedAt": "2026-09-02T07:32:38.429Z"
+  },
+  {
+    "id": "106831e4-17cf-497a-b487-356b43a2484c",
+    "title": "[HK] V11.4 & V14.7 Consolidate Statement Verification--minshuan",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Urgent",
+    "dueDate": null,
+    "tags": [
+      "redmine issue"
+    ],
+    "moreDetails": "",
+    "createdAt": "2026-09-07T07:44:20.127Z",
+    "updatedAt": "2026-09-07T07:44:39.697Z"
   }
 ]
