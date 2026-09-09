@@ -258,9 +258,11 @@
     "status": "Not Started",
     "priority": "Medium",
     "dueDate": null,
-    "tags": [],
-    "moreDetails": "",
+    "tags": [
+      "estimations and approach"
+    ],
+    "moreDetails": "asked bank some queries",
     "createdAt": "2026-09-09T04:11:37.298Z",
-    "updatedAt": "2026-09-09T04:11:37.298Z"
+    "updatedAt": "2026-09-09T04:12:07.501Z"
   }
 ]
