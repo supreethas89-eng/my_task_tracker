@@ -269,12 +269,12 @@
     "id": "2f0ce917-edbb-49fd-8976-dd5c2b49ba57",
     "title": "#38971 -- data patch for V11.4 production HK-- sean",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
-    "moreDetails": "",
+    "moreDetails": "provided data patch to sean for v11.4",
     "createdAt": "2026-09-09T06:18:21.576Z",
-    "updatedAt": "2026-09-09T06:18:21.576Z"
+    "updatedAt": "2026-09-10T02:57:46.563Z"
   }
 ]
