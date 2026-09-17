@@ -360,5 +360,17 @@
     "moreDetails": "",
     "createdAt": "2026-09-16T08:00:39.398Z",
     "updatedAt": "2026-09-16T08:00:45.301Z"
+  },
+  {
+    "id": "4b5b1f7c-fc51-45cd-b9ba-b699bced4014",
+    "title": "[External] : VN override message condition",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-09-17T01:12:54.684Z",
+    "updatedAt": "2026-09-17T01:12:54.684Z"
   }
 ]
