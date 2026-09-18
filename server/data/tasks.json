@@ -372,5 +372,29 @@
     "moreDetails": "",
     "createdAt": "2026-09-17T01:12:54.684Z",
     "updatedAt": "2026-09-17T01:12:54.684Z"
+  },
+  {
+    "id": "57496d7c-4939-48c3-8022-29bb9b0f1965",
+    "title": "[External] : 關於韓國環境建置時，會計科目相關檔案 Regarding files related to accounting accounts for the setup of the South Korean environment",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-09-17T04:16:25.284Z",
+    "updatedAt": "2026-09-17T04:16:25.284Z"
+  },
+  {
+    "id": "83548ddb-3763-4520-b0a0-250ea696f0af",
+    "title": "setting MFEE product waive",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-09-18T00:37:25.968Z",
+    "updatedAt": "2026-09-18T00:37:25.968Z"
   }
 ]
