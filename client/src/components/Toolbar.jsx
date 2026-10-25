@@ -37,6 +37,7 @@ function MultiSelect({ label, options, selected, onChange }) {
 export function Toolbar({
   view,
   setView,
+  page,
   search,
   setSearch,
   statusFilter,
@@ -61,7 +62,11 @@ export function Toolbar({
   return (
     <div className="flex flex-col gap-3 border-b border-neutral-200 px-6 py-4 dark:border-neutral-800">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800">
+        <div
+          className={`flex items-center gap-1 rounded-lg bg-neutral-100 p-1 dark:bg-neutral-800 ${
+            page === "completed" ? "invisible" : ""
+          }`}
+        >
           {["table", "board"].map((v) => (
             <button
               key={v}
@@ -115,7 +120,14 @@ export function Toolbar({
           className="w-56 rounded-md border border-neutral-200 px-3 py-1.5 text-sm outline-none focus:border-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:focus:border-neutral-500"
         />
 
-        <MultiSelect label="Status" options={STATUSES} selected={statusFilter} onChange={setStatusFilter} />
+        {page === "active" && (
+          <MultiSelect
+            label="Status"
+            options={STATUSES.filter((s) => s !== "Done")}
+            selected={statusFilter}
+            onChange={setStatusFilter}
+          />
+        )}
         <MultiSelect label="Priority" options={PRIORITIES} selected={priorityFilter} onChange={setPriorityFilter} />
         {allTags.length > 0 && (
           <MultiSelect label="Tags" options={allTags} selected={tagFilter} onChange={setTagFilter} />

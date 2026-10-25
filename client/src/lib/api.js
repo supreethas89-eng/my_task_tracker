@@ -18,6 +18,7 @@ export const api = {
   create: (task) => request("/tasks", { method: "POST", body: JSON.stringify(task) }),
   update: (id, patch) => request(`/tasks/${id}`, { method: "PUT", body: JSON.stringify(patch) }),
   remove: (id) => request(`/tasks/${id}`, { method: "DELETE" }),
+  bulkRemove: (ids) => request("/tasks/bulk-delete", { method: "POST", body: JSON.stringify({ ids }) }),
   gitStatus: () => request("/git/status"),
   gitCommit: (message) =>
     request("/git/commit", { method: "POST", body: JSON.stringify({ message }) }),

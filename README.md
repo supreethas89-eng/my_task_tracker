@@ -45,6 +45,7 @@ npm run dev --prefix client   # frontend only, http://localhost:5173
 | POST   | /tasks       | Create a task         |
 | PUT    | /tasks/:id   | Update a task (partial patch) |
 | DELETE | /tasks/:id   | Delete a task         |
+| POST   | /tasks/bulk-delete | Delete several tasks, body `{ "ids": [...] }` |
 
 Task shape:
 
@@ -58,7 +59,8 @@ Task shape:
   "dueDate": "YYYY-MM-DD or null",
   "tags": ["string"],
   "createdAt": "ISO timestamp",
-  "updatedAt": "ISO timestamp"
+  "updatedAt": "ISO timestamp",
+  "completedAt": "ISO timestamp when status became Done, else null"
 }
 ```
 
@@ -107,6 +109,10 @@ again — the server never pushes on its own, it only commits locally.
   bottom of each column.
 
 Switch between them with the tab control at the top of the page.
+
+Done tasks live on a separate **Completed** tab, so the **Active** tab only shows
+unfinished work. On the Completed tab you can narrow the list to tasks completed
+more than 1, 3, 6, or 12 months ago and delete everything shown in one go.
 
 ## Filtering, sorting, and search
 

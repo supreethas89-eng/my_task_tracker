@@ -1,18 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Toolbar } from "./components/Toolbar";
 import { TableView } from "./components/TableView";
 import { BoardView } from "./components/BoardView";
 import { TaskModal } from "./components/TaskModal";
 import { useTasks } from "./hooks/useTasks";
 
+const AGE_OPTIONS = [
+  [0, "Any time"],
+  [1, "Older than 1 month"],
+  [3, "Older than 3 months"],
+  [6, "Older than 6 months"],
+  [12, "Older than 1 year"],
+];
+
+// Tasks completed before the completedAt field existed fall back to updatedAt.
+const completedDate = (t) => new Date(t.completedAt || t.updatedAt);
+
 export default function App() {
   const {
+    tasks,
     filteredTasks,
     loading,
     error,
     createTask,
     updateTask,
     deleteTask,
+    deleteTasks,
     allTags,
     search,
     setSearch,
@@ -31,7 +44,10 @@ export default function App() {
     commitToGit,
   } = useTasks();
 
+  const [page, setPage] = useState("active");
   const [view, setView] = useState("table");
+  const [olderThan, setOlderThan] = useState(0);
+  const [bulkDeleting, setBulkDeleting] = useState(false);
   const [activeTask, setActiveTask] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(
@@ -59,6 +75,32 @@ export default function App() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  const completedCount = useMemo(() => tasks.filter((t) => t.status === "Done").length, [tasks]);
+  const pageTasks = useMemo(() => {
+    if (page !== "completed") return filteredTasks.filter((t) => t.status !== "Done");
+    const cutoff = new Date();
+    cutoff.setMonth(cutoff.getMonth() - olderThan);
+    return filteredTasks.filter((t) => t.status === "Done" && (!olderThan || completedDate(t) < cutoff));
+  }, [filteredTasks, page, olderThan]);
+
+  const handleBulkDelete = async () => {
+    const n = pageTasks.length;
+    if (!window.confirm(`Permanently delete ${n} completed task${n === 1 ? "" : "s"}?`)) return;
+    setBulkDeleting(true);
+    try {
+      await deleteTasks(pageTasks.map((t) => t.id));
+    } catch (e) {
+      window.alert(`Delete failed: ${e.message}`);
+    } finally {
+      setBulkDeleting(false);
+    }
+  };
+
+  const switchPage = (p) => {
+    setPage(p);
+    setStatusFilter([]);
+  };
 
   const openNewTask = () => {
     setActiveTask(null);
@@ -106,9 +148,32 @@ export default function App() {
         </p>
       </header>
 
+      <nav className="mt-4 flex gap-4 border-b border-neutral-200 px-6 dark:border-neutral-800">
+        {[
+          ["active", "Active", tasks.length - completedCount],
+          ["completed", "Completed", completedCount],
+        ].map(([key, label, count]) => (
+          <button
+            key={key}
+            onClick={() => switchPage(key)}
+            className={`-mb-px border-b-2 px-1 pb-2 text-sm font-medium transition ${
+              page === key
+                ? "border-neutral-900 text-neutral-900 dark:border-white dark:text-white"
+                : "border-transparent text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+            }`}
+          >
+            {label}
+            <span className="ml-1.5 rounded-full bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
+              {count}
+            </span>
+          </button>
+        ))}
+      </nav>
+
       <Toolbar
         view={view}
         setView={setView}
+        page={page}
         search={search}
         setSearch={setSearch}
         statusFilter={statusFilter}
@@ -143,11 +208,35 @@ export default function App() {
           </p>
         )}
 
+        {page === "completed" && !loading && (
+          <div className="flex items-center gap-2 px-6 pt-4">
+            <select
+              value={olderThan}
+              onChange={(e) => setOlderThan(Number(e.target.value))}
+              className="rounded-md border border-neutral-200 px-2 py-1.5 text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300"
+            >
+              {AGE_OPTIONS.map(([months, label]) => (
+                <option key={months} value={months}>
+                  {label}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={handleBulkDelete}
+              disabled={pageTasks.length === 0 || bulkDeleting}
+              className="rounded-md border border-red-200 px-2.5 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-red-900 dark:text-red-400 dark:hover:bg-red-950"
+            >
+              {bulkDeleting ? "Deleting..." : `Delete ${pageTasks.length} shown`}
+            </button>
+          </div>
+        )}
+
         {loading ? (
           <p className="px-6 py-8 text-sm text-neutral-400">Loading tasks...</p>
-        ) : view === "table" ? (
+        ) : page === "completed" || view === "table" ? (
           <TableView
-            tasks={filteredTasks}
+            tasks={pageTasks}
+            allowQuickAdd={page === "active"}
             onOpen={openTask}
             onUpdate={updateTask}
             onCreate={createTask}
@@ -155,7 +244,7 @@ export default function App() {
           />
         ) : (
           <BoardView
-            tasks={filteredTasks}
+            tasks={pageTasks}
             onOpen={openTask}
             onUpdate={updateTask}
             onCreate={createTask}

@@ -79,6 +79,13 @@ export function useTasks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tasks, refreshGitStatus]);
 
+  const deleteTasks = useCallback(async (ids) => {
+    await api.bulkRemove(ids);
+    const removed = new Set(ids);
+    setTasks((prev) => prev.filter((t) => !removed.has(t.id)));
+    refreshGitStatus();
+  }, [refreshGitStatus]);
+
   const commitToGit = useCallback(async (message) => {
     setGitCommitting(true);
     try {
@@ -143,6 +150,7 @@ export function useTasks() {
     createTask,
     updateTask,
     deleteTask,
+    deleteTasks,
     allTags,
     search,
     setSearch,

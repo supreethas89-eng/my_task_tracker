@@ -126,11 +126,22 @@ export default {
           moreDetails: body.moreDetails || "",
           createdAt: now,
           updatedAt: now,
+          completedAt: body.status === "Done" ? now : null,
         };
         const tasks = await readTasks(env);
         tasks.push(task);
         await writeTasks(env, tasks);
         return json(task, env, { status: 201 });
+      }
+
+      if (pathname === "/tasks/bulk-delete" && method === "POST") {
+        const body = await request.json();
+        if (!Array.isArray(body?.ids)) return json({ errors: ["ids must be an array"] }, env, { status: 400 });
+        const ids = new Set(body.ids);
+        const tasks = await readTasks(env);
+        const remaining = tasks.filter((t) => !ids.has(t.id));
+        await writeTasks(env, remaining);
+        return json({ deleted: tasks.length - remaining.length }, env);
       }
 
       const taskIdMatch = pathname.match(/^\/tasks\/([^/]+)$/);
@@ -145,13 +156,16 @@ export default {
         if (idx === -1) return json({ error: "Task not found" }, env, { status: 404 });
 
         const existing = tasks[idx];
+        const now = new Date().toISOString();
         const updated = {
           ...existing,
           ...body,
           id: existing.id,
           createdAt: existing.createdAt,
-          updatedAt: new Date().toISOString(),
+          updatedAt: now,
         };
+        if (updated.status !== "Done") updated.completedAt = null;
+        else if (existing.status !== "Done") updated.completedAt = now;
         if (typeof updated.title === "string") updated.title = updated.title.trim();
 
         tasks[idx] = updated;

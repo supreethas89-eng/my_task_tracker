@@ -7,7 +7,7 @@ function fmtDate(d) {
   return new Date(d).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
-export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
+export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete, allowQuickAdd = true }) {
   const [quickTitle, setQuickTitle] = useState("");
 
   const handleQuickAdd = async (e) => {
@@ -125,6 +125,7 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
             </tr>
           ))}
 
+          {allowQuickAdd && (
           <tr>
             <td className="py-2 pr-2 text-neutral-300">+</td>
             <td colSpan={7} className="py-2">
@@ -137,6 +138,7 @@ export function TableView({ tasks, onOpen, onUpdate, onCreate, onDelete }) {
               />
             </td>
           </tr>
+          )}
         </tbody>
       </table>
 

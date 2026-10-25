@@ -53,6 +53,7 @@ app.post("/tasks", async (req, res) => {
     moreDetails: req.body.moreDetails || "",
     createdAt: now,
     updatedAt: now,
+    completedAt: req.body.status === "Done" ? now : null,
   };
 
   const tasks = await readTasks();
@@ -71,19 +72,32 @@ app.put("/tasks/:id", async (req, res) => {
   if (idx === -1) return res.status(404).json({ error: "Task not found" });
 
   const existing = tasks[idx];
+  const now = new Date().toISOString();
   const updated = {
     ...existing,
     ...req.body,
     id: existing.id,
     createdAt: existing.createdAt,
-    updatedAt: new Date().toISOString(),
+    updatedAt: now,
   };
+  if (updated.status !== "Done") updated.completedAt = null;
+  else if (existing.status !== "Done") updated.completedAt = now;
   if (typeof updated.title === "string") updated.title = updated.title.trim();
 
   tasks[idx] = updated;
   await writeTasks(tasks);
 
   res.json(updated);
+});
+
+app.post("/tasks/bulk-delete", async (req, res) => {
+  if (!Array.isArray(req.body?.ids)) return res.status(400).json({ errors: ["ids must be an array"] });
+  const ids = new Set(req.body.ids);
+  const tasks = await readTasks();
+  const remaining = tasks.filter((t) => !ids.has(t.id));
+  await writeTasks(remaining);
+
+  res.json({ deleted: tasks.length - remaining.length });
 });
 
 app.delete("/tasks/:id", async (req, res) => {
