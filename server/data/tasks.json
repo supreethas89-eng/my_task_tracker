@@ -31,7 +31,7 @@
     "id": "e3da2a98-6c22-4f8b-96dd-2c19e666252e",
     "title": "Code changes for Option 3 customization",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "High",
     "dueDate": "2026-09-01",
     "tags": [
@@ -39,7 +39,8 @@
     ],
     "moreDetails": "Bank added new requirement for effort analysis",
     "createdAt": "2026-08-26T12:34:28.997Z",
-    "updatedAt": "2026-08-31T03:55:36.478Z"
+    "updatedAt": "2026-10-27T04:20:31.042Z",
+    "completedAt": "2026-10-27T04:20:31.042Z"
   },
   {
     "id": "cbe41541-38cc-46f4-85a5-f6b0ddb7a05f",
@@ -99,7 +100,7 @@
     "id": "fd13d043-6aef-41cf-8598-5b7e4430ea45",
     "title": "AU PROD issue there’s no lov of kyc reference-Minshuan",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Low",
     "dueDate": null,
     "tags": [
@@ -107,7 +108,8 @@
     ],
     "moreDetails": "Bank deployed EHD changes but lov not working to verify sources deployed.",
     "createdAt": "2026-08-27T07:03:32.021Z",
-    "updatedAt": "2026-08-27T07:41:45.290Z"
+    "updatedAt": "2026-10-27T04:21:31.408Z",
+    "completedAt": "2026-10-27T04:21:31.408Z"
   },
   {
     "id": "4b6e0d4c-7d05-46c5-8f70-a2016943a9cb",
@@ -139,7 +141,7 @@
     "id": "57bda55f-6d43-4f8a-8a0a-1c919c7354ed",
     "title": "Two CITAD Transactions Missing in VN Production--Jerry",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "High",
     "dueDate": "2026-09-04",
     "tags": [
@@ -147,7 +149,8 @@
     ],
     "moreDetails": "Bank confirmed apporach , to start the development\n--shared the solution approach to Bank to do code changes using FIFO . bank to confirm to release MOS fix",
     "createdAt": "2026-08-31T03:23:28.044Z",
-    "updatedAt": "2026-09-01T03:25:49.459Z"
+    "updatedAt": "2026-10-27T04:21:22.706Z",
+    "completedAt": "2026-10-27T04:21:22.706Z"
   },
   {
     "id": "b83c4a34-999f-4d6c-b012-2eabda66d684",
@@ -241,7 +244,7 @@
     "id": "106831e4-17cf-497a-b487-356b43a2484c",
     "title": "[HK] V11.4 & V14.7 Consolidate Statement Verification--minshuan",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Urgent",
     "dueDate": null,
     "tags": [
@@ -249,7 +252,8 @@
     ],
     "moreDetails": "",
     "createdAt": "2026-09-07T07:44:20.127Z",
-    "updatedAt": "2026-09-07T07:44:39.697Z"
+    "updatedAt": "2026-10-27T04:21:20.385Z",
+    "completedAt": "2026-10-27T04:21:20.385Z"
   },
   {
     "id": "80644e5c-45bb-4ec4-89b1-896bd6c5600f",
@@ -281,13 +285,14 @@
     "id": "e07ea3a8-3a4e-4c91-9f5c-54e3b47fb233",
     "title": "Support for dr drill next month",
     "description": "",
-    "status": "In Progress",
+    "status": "Done",
     "priority": "Low",
     "dueDate": null,
     "tags": [],
     "moreDetails": "provided the names and raised OT in HR query tool",
     "createdAt": "2026-09-10T10:35:43.928Z",
-    "updatedAt": "2026-09-16T05:03:13.869Z"
+    "updatedAt": "2026-10-27T04:21:12.985Z",
+    "completedAt": "2026-10-27T04:21:12.985Z"
   },
   {
     "id": "56e3ecaf-acaa-453b-b139-7645e8cb7955",
@@ -341,13 +346,14 @@
     "id": "397353d3-a612-4cb7-97e5-4e5574129057",
     "title": "[External] : RE: [重要]2027優化項目_請評估-- Bulk Rate upload",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-09-16T04:54:50.070Z",
-    "updatedAt": "2026-09-16T04:54:50.070Z"
+    "updatedAt": "2026-10-27T04:21:08.811Z",
+    "completedAt": "2026-10-27T04:21:08.811Z"
   },
   {
     "id": "79936d72-8a4d-4921-9a93-01586a2a0138",
@@ -365,25 +371,27 @@
     "id": "4b5b1f7c-fc51-45cd-b9ba-b699bced4014",
     "title": "[External] : VN override message condition",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-09-17T01:12:54.684Z",
-    "updatedAt": "2026-09-17T01:12:54.684Z"
+    "updatedAt": "2026-10-27T04:21:01.029Z",
+    "completedAt": "2026-10-27T04:21:01.029Z"
   },
   {
     "id": "57496d7c-4939-48c3-8022-29bb9b0f1965",
     "title": "[External] : 關於韓國環境建置時，會計科目相關檔案 Regarding files related to accounting accounts for the setup of the South Korean environment",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-09-17T04:16:25.284Z",
-    "updatedAt": "2026-09-17T04:16:25.284Z"
+    "updatedAt": "2026-10-27T04:20:58.055Z",
+    "completedAt": "2026-10-27T04:20:58.055Z"
   },
   {
     "id": "83548ddb-3763-4520-b0a0-250ea696f0af",
@@ -401,48 +409,78 @@
     "id": "96201094-0493-40d6-ab83-2d42f7a53508",
     "title": "KR GOLD Build Schedule",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-09-18T02:04:29.669Z",
-    "updatedAt": "2026-09-18T02:04:29.669Z"
+    "updatedAt": "2026-10-25T01:50:14.846Z",
+    "completedAt": "2026-10-25T01:50:14.846Z"
   },
   {
     "id": "26fb9fde-3221-44cb-b62d-bc2ba0e6b23f",
     "title": "RE: [External] : #39525 Confirmation of Consolidated Statement table",
     "description": "",
-    "status": "Not Started",
+    "status": "Done",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
     "createdAt": "2026-09-18T04:28:45.714Z",
-    "updatedAt": "2026-09-18T04:28:45.714Z"
+    "updatedAt": "2026-10-27T04:20:48.373Z",
+    "completedAt": "2026-10-27T04:20:48.373Z"
   },
   {
     "id": "d085dc9e-11b2-411a-8495-6dc26f7c6cfd",
     "title": "[External] : [AU] Consolidated Statement Requisition",
+    "description": "",
+    "status": "Done",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-09-18T04:28:57.726Z",
+    "updatedAt": "2026-10-27T04:20:47.765Z",
+    "completedAt": "2026-10-27T04:20:47.765Z"
+  },
+  {
+    "id": "b5987d1e-404a-482a-97d0-70d9ae505c3e",
+    "title": "unique_endtoend_txnref Option3 changes deliver to Bank",
+    "description": "",
+    "status": "Done",
+    "priority": "Urgent",
+    "dueDate": "2026-10-14",
+    "tags": [],
+    "moreDetails": "Option3 changes deliver to Bank ",
+    "createdAt": "2026-10-12T06:50:44.033Z",
+    "updatedAt": "2026-10-27T04:20:39.516Z",
+    "completedAt": "2026-10-27T04:20:39.516Z"
+  },
+  {
+    "id": "a2bc68aa-b87e-4d56-98f9-521ab2cfb666",
+    "title": "Mos ticket : 4-0004144951 -- VCB customization--kevin",
     "description": "",
     "status": "Not Started",
     "priority": "Medium",
     "dueDate": null,
     "tags": [],
     "moreDetails": "",
-    "createdAt": "2026-09-18T04:28:57.726Z",
-    "updatedAt": "2026-09-18T04:28:57.726Z"
+    "createdAt": "2026-10-27T04:20:28.564Z",
+    "updatedAt": "2026-10-27T04:20:28.564Z",
+    "completedAt": null
   },
   {
-    "id": "b5987d1e-404a-482a-97d0-70d9ae505c3e",
-    "title": "unique_endtoend_txnref Option3 changes deliver to Bank",
+    "id": "35386ab1-d89a-4074-9e9e-1b210e168e6a",
+    "title": "KR-GOLD new GL issue --freya",
     "description": "",
     "status": "Not Started",
-    "priority": "Urgent",
-    "dueDate": "2026-10-14",
+    "priority": "Medium",
+    "dueDate": null,
     "tags": [],
-    "moreDetails": "Option3 changes deliver to Bank ",
-    "createdAt": "2026-10-12T06:50:44.033Z",
-    "updatedAt": "2026-10-12T06:51:11.622Z"
+    "moreDetails": "",
+    "createdAt": "2026-10-27T04:22:13.356Z",
+    "updatedAt": "2026-10-27T04:22:13.356Z",
+    "completedAt": null
   }
 ]
