@@ -482,5 +482,31 @@
     "createdAt": "2026-10-27T04:22:13.356Z",
     "updatedAt": "2026-10-27T04:22:13.356Z",
     "completedAt": null
+  },
+  {
+    "id": "5e998605-e2e8-4bbe-8331-16b39b9a32ec",
+    "title": "Jerry missing citad txn",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-10-29T10:30:50.577Z",
+    "updatedAt": "2026-10-29T10:30:50.577Z",
+    "completedAt": null
+  },
+  {
+    "id": "0a593587-1f21-4880-b93b-0fb39c3a3b70",
+    "title": "Scott — Redmine issue",
+    "description": "",
+    "status": "Not Started",
+    "priority": "Medium",
+    "dueDate": null,
+    "tags": [],
+    "moreDetails": "",
+    "createdAt": "2026-10-29T10:31:07.518Z",
+    "updatedAt": "2026-10-29T10:31:07.518Z",
+    "completedAt": null
   }
 ]
